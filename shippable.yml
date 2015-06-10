@@ -1,5 +1,3 @@
-env:
- global:
 before_script:
   - mkdir -p ~/.aws
   - echo '[profile eb-cli]' > ~/.aws/config
