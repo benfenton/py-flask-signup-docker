@@ -1,10 +1,20 @@
+branches:
+  only:
+    - master
+    - develop
+before_install:
+  - apt-get install -y python-dev
+  - pip install awsebcli
+   
 before_script:
   - mkdir -p ~/.aws
   - echo '[profile eb-cli]' > ~/.aws/config
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
-commit_container: benfenton/py-flask-signup-docker
+script:
+  - npm test
+commit_container: manonthemat/epione
 after_success:
-  - eb init && eb deploy --timeout 30
+  - eb init && eb deploy --timeout 20
 notifications:
   email: false
