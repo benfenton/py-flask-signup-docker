@@ -1,5 +1,11 @@
 language: python
 
+env:
+  global:
+    - AWS_ACCESS_KEY_ID=AKIAJHLRYE37JFYGMOIQ
+    - AWS_DEFAULT_REGION=us-east-1
+    - secure: q2hmMFq9Ymc1k5NjZ87AlWCS4uZmC1pp8USPyU8NmW5ZyTICyz1iKZJMpAXZwgfvJHNUuS30mmflOLSacCGGn7vrwzxzp//5hPFRj/bk2jLp1MJ1KAlFtz3e/rPM/vbWKOoGZZra/Yr4lEGti/Qwb/2B/y1OWj63We55nubB8aBU8anQNbClDG+G3BUtC0LmCC4HhoCaBqhSvXyWUB25yMkeFAj0nng986dFF391BGI7AhmEXsezTWQGHRqUQD72LzvKI7R6PsA/iRCcl5MIIt/vFcxqluCJx/LpnSy6qCyXnrQ+nk2XiNhOOm3/xEOijUXocNMr93y7JGpfZwlBGw==
+    
 branches:
   only:
     - master
