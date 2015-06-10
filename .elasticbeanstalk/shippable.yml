@@ -1,0 +1,13 @@
+env:
+ global:
+    - VIDEO-WALL_NODE_HOST=0.0.0.0 VIDEO-WALL_NODE_PORT=8000 VIDEO-WALL_DB_PROTOCOL=https VIDEO-WALL_DEVELOPMENT_NODE_HOST=0.0.0.0 VIDEO-WALL_DEVELOPMENT_NODE_PORT=8000 VIDEO-WALL_DEVELOPMENT_DB_PROTOCOL=https VIDEO-WALL_TEST_NODE_HOST=0.0.0.0 VIDEO-WALL_TEST_NODE_PORT=8000 VIDEO-WALL_TEST_DB_PROTOCOL=https VIDEO-WALL_DEVELOPMENT_DB_PORT=7473 VIDEO-WALL_TEST_DB_PORT=7473 VIDEO-WALL_TEST_DB_PROTOCOL=https
+before_script:
+  - mkdir -p ~/.aws
+  - echo '[profile eb-cli]' > ~/.aws/config
+  - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
+  - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
+commit_container: benfenton/py-flask-signup-docker
+after_success:
+  - eb init && eb deploy --timeout 30
+notifications:
+  email: false
