@@ -1,6 +1,5 @@
 env:
  global:
-    - VIDEO-WALL_NODE_HOST=0.0.0.0
 before_script:
   - mkdir -p ~/.aws
   - echo '[profile eb-cli]' > ~/.aws/config
