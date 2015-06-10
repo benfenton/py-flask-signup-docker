@@ -2,9 +2,6 @@ branches:
   only:
     - master
     - develop
-before_install:
-  - apt-get install -y python-dev
-  - pip install awsebcli
    
 before_script:
   - mkdir -p ~/.aws
