@@ -11,10 +11,10 @@ before_script:
   - echo '[profile eb-cli]' > ~/.aws/config
   - echo "aws_access_key_id = $AWSAccessKeyId" >> ~/.aws/config
   - echo "aws_secret_access_key = $AWSSecretKey" >> ~/.aws/config
-script:
-  - npm test
-commit_container: manonthemat/epione
+
+commit_container: hookandloop/py-flask-signup-docker
+
 after_success:
-  - eb init && eb deploy --timeout 20
+  - eb init && eb deploy --timeout 30
 notifications:
   email: false
