@@ -1,4 +1,4 @@
 FROM python:2-onbuild
 CMD [ "python", "./application.py" ]
 
-EXPOSE 8000
+EXPOSE 8080
